@@ -8,10 +8,10 @@ defmodule RocketpayWeb.UserController do
   action_fallback FallbackController
 
   def create(conn, params) do
-   with {:ok, %User{} = user} <- Rocketpay.create_user(params) do
-    conn
-    |> put_status(:created)
-    |> render("create.json", user: user)
-   end
+    with {:ok, %User{} = user} <- Rocketpay.create_user(params) do
+      conn
+      |> put_status(:created)
+      |> render("create.json", user: user)
+    end
   end
 end

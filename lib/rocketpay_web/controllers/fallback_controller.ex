@@ -3,10 +3,10 @@ defmodule RocketpayWeb.FallbackController do
 
   alias RocketpayWeb.ErrorView
 
-  def call(conn, {:error, %{result: result, status: status}}) do
+  def call(conn, {:error, result}) do
     conn
-    |> put_status(status)
+    |> put_status(:bad_request)
     |> put_view(ErrorView)
-    |>render("error.json", result: result)
+    |> render("400.json", result: result)
   end
 end
