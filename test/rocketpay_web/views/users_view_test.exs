@@ -1,5 +1,5 @@
 defmodule RocketpayWeb.UserViewTest do
-  use RocketpayWeb.ConnCase
+  use RocketpayWeb.ConnCase, async: true
 
   import Phoenix.View
 
